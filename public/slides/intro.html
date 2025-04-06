@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>介绍</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            overflow: hidden;
+            background-color: #f8fafc;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            color: #1e293b;
+        }
+        
+        .slide-content {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem 4rem;
+        }
+        
+        .title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: #0f172a;
+            position: relative;
+            display: inline-block;
+            animation: fadeInLeft 1s ease-out;
+        }
+        
+        .title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #4fd1c5, #38b2ac);
+            animation: expandWidth 1s ease-out 0.5s forwards;
+            width: 0;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease-out;
+            animation-fill-mode: both;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .feature-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        .feature-card:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+        
+        .icon-wrapper {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4fd1c5 0%, #38b2ac 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #0f172a;
+        }
+        
+        .feature-desc {
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes expandWidth {
+            to {
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-content">
+        <h1 class="title">关于网站PPT模板</h1>
+        <p class="text-gray-600 text-lg max-w-3xl" style="animation: fadeInLeft 1s ease-out 0.3s both;">
+            网站PPT模板是一个现代化的React演示文稿框架，让您能够创建专业、美观的网页演示文稿，
+            无需复杂的编程知识，只需准备HTML幻灯片即可。
+        </p>
+        
+        <div class="content-grid">
+            <div class="feature-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-paint-brush text-white"></i>
+                </div>
+                <h3 class="feature-title">现代化设计</h3>
+                <p class="feature-desc">
+                    采用现代UI设计语言，提供美观的视觉体验和流畅的动画效果，让您的演示更加生动。
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-mobile-alt text-white"></i>
+                </div>
+                <h3 class="feature-title">响应式布局</h3>
+                <p class="feature-desc">
+                    完美适配各种屏幕尺寸，从桌面到平板设备，保持16:9的演示比例，提供最佳观看体验。
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-cogs text-white"></i>
+                </div>
+                <h3 class="feature-title">简单易用</h3>
+                <p class="feature-desc">
+                    只需准备HTML幻灯片文件，系统会自动识别并添加到导航栏，无需复杂配置，即可开始演示。
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-keyboard text-white"></i>
+                </div>
+                <h3 class="feature-title">键盘导航</h3>
+                <p class="feature-desc">
+                    支持键盘方向键导航，让您的演示更加流畅，专注于内容而非操作。
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

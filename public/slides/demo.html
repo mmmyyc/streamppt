@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>演示</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            overflow: hidden;
+            background-color: #0f172a;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        
+        .slide-content {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 3rem;
+        }
+        
+        .title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            background: linear-gradient(90deg, #4fd1c5, #38b2ac);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            opacity: 0.7;
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+        
+        .demo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+        }
+        
+        .demo-card {
+            background-color: #1e293b;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+        
+        .demo-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .demo-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #4fd1c5 0%, #38b2ac 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+        
+        .demo-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .code-block {
+            background-color: #0f172a;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            position: relative;
+        }
+        
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .code-title {
+            font-size: 0.875rem;
+            color: #94a3b8;
+        }
+        
+        .code-copy {
+            background: none;
+            border: none;
+            color: #94a3b8;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .code-copy:hover {
+            color: white;
+        }
+        
+        .code-content {
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+        
+        .code-line {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        
+        .code-comment {
+            color: #64748b;
+        }
+        
+        .code-keyword {
+            color: #ec4899;
+        }
+        
+        .code-string {
+            color: #10b981;
+        }
+        
+        .code-function {
+            color: #3b82f6;
+        }
+        
+        .demo-footer {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 1.5rem;
+        }
+        
+        .demo-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .demo-btn-primary {
+            background: linear-gradient(90deg, #4fd1c5, #38b2ac);
+            color: white;
+        }
+        
+        .demo-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(79, 209, 197, 0.5);
+        }
+        
+        .stars {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            background: white;
+            z-index: -1;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="stars-container"></div>
+    
+    <div class="slide-content">
+        <h1 class="title">如何使用网站PPT模板</h1>
+        <p class="subtitle">只需几个简单步骤，即可创建精美的网页演示文稿</p>
+        
+        <div class="demo-container">
+            <div class="demo-card">
+                <div class="demo-header">
+                    <div class="demo-icon">
+                        <i class="fas fa-code text-white text-xl"></i>
+                    </div>
+                    <h3 class="demo-title">创建幻灯片HTML文件</h3>
+                </div>
+                
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-title">slide.html</span>
+                        <button class="code-copy">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="code-content">
+                        <span class="code-line"><span class="code-keyword">&lt;!DOCTYPE html&gt;</span></span>
+                        <span class="code-line"><span class="code-keyword">&lt;html</span> lang=<span class="code-string">"zh-CN"</span><span class="code-keyword">&gt;</span></span>
+                        <span class="code-line"><span class="code-keyword">&lt;head&gt;</span></span>
+                        <span class="code-line">    <span class="code-keyword">&lt;meta</span> charset=<span class="code-string">"UTF-8"</span><span class="code-keyword">&gt;</span></span>
+                        <span class="code-line">    <span class="code-keyword">&lt;meta</span> name=<span class="code-string">"viewport"</span> content=<span class="code-string">"width=device-width, initial-scale=1.0"</span><span class="code-keyword">&gt;</span></span>
+                        <span class="code-line">    <span class="code-keyword">&lt;title&gt;</span>我的幻灯片<span class="code-keyword">&lt;/title&gt;</span></span>
+                        <span class="code-line">    <span class="code-keyword">&lt;script</span> src=<span class="code-string">"https://cdn.tailwindcss.com"</span><span class="code-keyword">&gt;&lt;/script&gt;</span></span>
+                        <span class="code-line">    <span class="code-comment">&lt;!-- 您的样式 --&gt;</span></span>
+                        <span class="code-line"><span class="code-keyword">&lt;/head&gt;</span></span>
+                        <span class="code-line"><span class="code-keyword">&lt;body&gt;</span></span>
+                        <span class="code-line">    <span class="code-comment">&lt;!-- 幻灯片内容 --&gt;</span></span>
+                        <span class="code-line">    <span class="code-keyword">&lt;div</span> class=<span class="code-string">"slide-content"</span><span class="code-keyword">&gt;</span></span>
+                        <span class="code-line">        <span class="code-keyword">&lt;h1&gt;</span>幻灯片标题<span class="code-keyword">&lt;/h1&gt;</span></span>
+                        <span class="code-line">        <span class="code-keyword">&lt;p&gt;</span>幻灯片内容...<span class="code-keyword">&lt;/p&gt;</span></span>
+                        <span class="code-line">    <span class="code-keyword">&lt;/div&gt;</span></span>
+                        <span class="code-line"><span class="code-keyword">&lt;/body&gt;</span></span>
+                        <span class="code-line"><span class="code-keyword">&lt;/html&gt;</span></span>
+                    </div>
+                </div>
+                
+                <p class="text-gray-300 mb-4">
+                    创建您的HTML幻灯片文件后，只需点击"添加幻灯片"按钮上传文件，系统将自动识别并添加到演示列表中。
+                    您可以创建多个幻灯片，它们将按照上传顺序排列。
+                </p>
+                
+                <div class="demo-footer">
+                    <button class="demo-btn demo-btn-primary">
+                        <i class="fas fa-play mr-2"></i> 查看示例
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 创建星空背景
+        function createStars() {
+            const starsContainer = document.getElementById('stars-container');
+            const starsCount = 100;
+            
+            for (let i = 0; i < starsCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('stars');
+                
+                // 随机位置
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight;
+                
+                // 随机大小
+                const size = Math.random() * 2;
+                
+                // 随机透明度
+                const opacity = Math.random() * 0.8 + 0.2;
+                
+                star.style.left = `${x}px`;
+                star.style.top = `${y}px`;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.opacity = opacity;
+                
+                // 添加闪烁动画
+                star.style.animation = `twinkle ${Math.random() * 5 + 3}s ease-in-out infinite`;
+                
+                starsContainer.appendChild(star);
+            }
+        }
+        
+        // 初始化
+        window.addEventListener('DOMContentLoaded', () => {
+            createStars();
+            
+            // 复制代码按钮
+            const copyBtn = document.querySelector('.code-copy');
+            copyBtn.addEventListener('click', () => {
+                const codeContent = document.querySelector('.code-content').textContent;
+                navigator.clipboard.writeText(codeContent);
+                
+                copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+                setTimeout(() => {
+                    copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
+

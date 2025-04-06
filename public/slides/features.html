@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>功能特点</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f6f6f6 0%, #ffffff 100%);
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            color: #1e293b;
+        }
+        
+        .slide-content {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 4rem;
+        }
+        
+        .title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            color: #0f172a;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .features-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        
+        .feature-item {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            width: calc(33.333% - 2rem);
+            min-width: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease-out;
+            animation-fill-mode: both;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .feature-item:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .feature-item:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        .feature-item:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+        
+        .feature-item:nth-child(5) {
+            animation-delay: 0.8s;
+        }
+        
+        .feature-item:nth-child(6) {
+            animation-delay: 1s;
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4fd1c5 0%, #38b2ac 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #0f172a;
+        }
+        
+        .feature-desc {
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        .decoration {
+            position: absolute;
+            z-index: -1;
+        }
+        
+        .decoration-1 {
+            top: 10%;
+            right: 5%;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(79, 209, 197, 0.1);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation: morph 8s ease-in-out infinite;
+        }
+        
+        .decoration-2 {
+            bottom: 10%;
+            left: 5%;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(236, 72, 153, 0.1);
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            animation: morph 8s ease-in-out infinite 1s;
+        }
+        
+        @keyframes morph {
+            0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+            100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="decoration decoration-1"></div>
+    <div class="decoration decoration-2"></div>
+    
+    <div class="slide-content">
+        <h1 class="title">核心功能特点</h1>
+        
+        <div class="features-container">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-list-ul"></i>
+                </div>
+                <h3 class="feature-title">自动导航</h3>
+                <p class="feature-desc">
+                    自动识别并添加幻灯片到左侧导航栏，轻松管理演示内容，无需手动配置。
+                </p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-keyboard"></i>
+                </div>
+                <h3 class="feature-title">键盘控制</h3>
+                <p class="feature-desc">
+                    支持键盘方向键导航，左右箭头切换幻灯片，让演示更加流畅自然。
+                </p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-expand"></i>
+                </div>
+                <h3 class="feature-title">全屏显示</h3>
+                <p class="feature-desc">
+                    一键切换全屏模式，提供沉浸式演示体验，专注于内容展示。
+                </p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3 class="feature-title">响应式设计</h3>
+                <p class="feature-desc">
+                    完美适配各种屏幕尺寸，从桌面到平板设备，保持16:9的演示比例。
+                </p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-upload"></i>
+                </div>
+                <h3 class="feature-title">幻灯片上传</h3>
+                <p class="feature-desc">
+                    支持上传HTML幻灯片文件，自动添加到演示列表，即时预览效果。
+                </p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3 class="feature-title">精美动画</h3>
+                <p class="feature-desc">
+                    内置丰富的过渡动画和交互效果，让演示更加生动有趣，吸引观众注意力。
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
